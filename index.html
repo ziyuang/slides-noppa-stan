@@ -75,18 +75,17 @@
     <h2>Example 1: linear regression</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>\[
+y_n=\alpha+\beta x_n+\epsilon_n\quad\mbox{where}\quad\epsilon_n\sim\mathcal{N}(0,\sigma^2)
+\]</p>
 <div class="tabbable">
   <ul class="nav nav-pills">
-    <li class="tab active"><a href="#linear-regresssion-figure" data-toggle="pill">linear-regresssion-figure</a></li>
+    <li class="tab active"><a href="#figure" data-toggle="pill">figure</a></li>
     <li class="tab "><a href="#stan-code" data-toggle="pill">stan-code</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane fade in active" id="linear-regresssion-figure">
-      <pre><code>## [1] FALSE
-</code></pre>
-
-<p><img src="assets/fig/unnamed-chunk-1-1.png" title="linear regression" alt="linear regression" style="display: block; margin: auto;" /></p>
+    <div class="tab-pane fade in active" id="figure">
+      <p><img src="assets/fig/unnamed-chunk-1-1.png" title="linear regression" alt="linear regression" style="display: block; margin: auto;" /></p>
 
     </div>
     <div class="tab-pane fade in " id="stan-code">
@@ -95,13 +94,11 @@
   vector[N] x;
   vector[N] y;
 }
-
 parameters {
   real alpha;
   real beta;
   real&lt;lower=0&gt; sigma_sqrt;
 }
-
 model {
   y ~ normal(alpha + beta * x, sigma_sqrt); // no prior = improper prior
 }
@@ -217,11 +214,11 @@ model {
     
 <div class="tabbable">
   <ul class="nav nav-pills">
-    <li class="tab active"><a href="#r-code" data-toggle="pill">r-code</a></li>
+    <li class="tab active"><a href="#R-code" data-toggle="pill">R-code</a></li>
     <li class="tab "><a href="#stan-result" data-toggle="pill">stan-result</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane fade in active" id="r-code">
+    <div class="tab-pane fade in active" id="R-code">
       <pre><code class="r">library(rstan)
 N &lt;- 100; x &lt;- 1:N; alpha &lt;- 50; beta &lt;- 0.2
 y &lt;- alpha + beta * x + rnorm(n, mean=0, sd=4)
@@ -264,11 +261,11 @@ convergence, Rhat=1).
     
 <div class="tabbable">
   <ul class="nav nav-pills">
-    <li class="tab active"><a href="#gp-data" data-toggle="pill">gp-data</a></li>
+    <li class="tab active"><a href="#data" data-toggle="pill">data</a></li>
     <li class="tab "><a href="#gp-result" data-toggle="pill">gp-result</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane fade in active" id="gp-data">
+    <div class="tab-pane fade in active" id="data">
       <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
 
     </div>

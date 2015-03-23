@@ -38,12 +38,7 @@ $$
 y_n=\alpha+\beta x_n+\epsilon_n\quad\mbox{where}\quad\epsilon_n\sim\mathcal{N}(0,\sigma^2)
 $$
 
-*** class:active id:linear-regresssion-figure
-
-
-```
-## [1] FALSE
-```
+*** class:active id:figure
 
 <img src="assets/fig/unnamed-chunk-1-1.png" title="linear regression" alt="linear regression" style="display: block; margin: auto;" />
 
@@ -57,13 +52,11 @@ data {
   vector[N] x;
   vector[N] y;
 }
-
 parameters {
   real alpha;
   real beta;
   real<lower=0> sigma_sqrt;
 }
-
 model {
   y ~ normal(alpha + beta * x, sigma_sqrt); // no prior = improper prior
 }
@@ -152,7 +145,7 @@ Data types:
 
 ## Compile and do inference
 
-*** class:active id:r-code
+*** class:active id:R-code
 
 
 ```r
@@ -191,7 +184,7 @@ convergence, Rhat=1).
 
 ### Younger Americans are more likely to support the statewide legalization of gay marriage
 
-*** class:active id:gp-data
+*** class:active id:data
 
 <img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
 
