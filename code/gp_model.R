@@ -50,7 +50,7 @@ gp_stan  <- '
 
     for (i in 1:N_ages){
       p_post[i] <- inv_logit(y[i]); // sigmoid function
-      kdn_post[i] <- 1.0 * binomial_rng(N[i], p_post[i]) / N[i];
+      kdn_post[i] <- 1.0 * binomial_rng(N[i], p_post[i]) / N[i];  // K divided by N
     }
   }
 '
