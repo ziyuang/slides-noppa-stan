@@ -46,7 +46,7 @@ gp_stan  <- '
   
   generated quantities{
     vector[N_ages] p_post;
-    vector[N_ages] kdn_post;  // K given N
+    vector[N_ages] kdn_post;  // K divided by N
 
     for (i in 1:N_ages){
       p_post[i] <- inv_logit(y[i]); // sigmoid function
